@@ -1,0 +1,46 @@
+{
+    "category": "data (things)",
+    "display": "Find Cheapest Price",
+    "fields": {
+        "AAD": {
+            "caption": "dateStart",
+            "doc": "yyyy-mm-dd",
+            "editor": "DynamicValue",
+            "name": "dateStart",
+            "rank": 0,
+            "value": "text"
+        },
+        "AAE": {
+            "caption": "dateEnd",
+            "doc": "yyyy-mm-dd",
+            "editor": "DynamicValue",
+            "name": "dateEnd",
+            "rank": 1,
+            "value": "text"
+        },
+        "AAF": {
+            "caption": "emissionNumber",
+            "editor": "DynamicValue",
+            "name": "emissionNumber",
+            "rank": 2,
+            "value": "number"
+        },
+        "AAG": {
+            "caption": "axlesNumber",
+            "editor": "DynamicValue",
+            "name": "axlesNumber",
+            "rank": 3,
+            "value": "number"
+        }
+    },
+    "return_value": {
+        "AAH": {
+            "caption": "price",
+            "name": "price",
+            "rank": 0,
+            "value": "number"
+        }
+    },
+    "type": "server_side",
+    "use_packages": true
+}
