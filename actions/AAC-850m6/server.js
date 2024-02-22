@@ -25,57 +25,57 @@ function calCheapest(startDate, endDate, emissionClass, axles) {
   // 2. Then, calculate the cost for each of these periods
   function getCostPerPeriod(emissionClass, axles) {
     let costPerYear, costPerMonth, costPerWeek, costPerDay;
-    switch (emissionClass) {
-      case 0:
-        costPerYear = axles < 4 ? 1407 : 2359;
-        costPerMonth = axles < 4 ? 140 : 235;
-        costPerWeek = axles < 4 ? 37 : 62;
-        costPerDay = 12;
-        break;
-      case 1:
-        costPerYear = axles < 4 ? 1223 : 2042;
-        costPerMonth = axles < 4 ? 122 : 204;
-        costPerWeek = axles < 4 ? 32 : 54;
-        costPerDay = 12;
-        break;
-      case 2:
-        costPerYear = axles < 4 ? 1065 : 1776;
-        costPerMonth = axles < 4 ? 106 : 177;
-        costPerWeek = axles < 4 ? 28 : 47;
-        costPerDay = 12;
-        break;
-      case 3:
-        costPerYear = axles < 4 ? 926 : 1543;
-        costPerMonth = axles < 4 ? 92 : 154;
-        costPerWeek = axles < 4 ? 24 : 41;
-        costPerDay = 12;
-        break;
-      case 4:
-        costPerYear = axles < 4 ? 842 : 1404;
-        costPerMonth = axles < 4 ? 84 : 140;
-        costPerWeek = axles < 4 ? 22 : 37;
-        costPerDay = 12;
-        break;
-      case 5:
-        costPerYear = axles < 4 ? 796 : 1327;
-        costPerMonth = axles < 4 ? 79 : 132;
-        costPerWeek = axles < 4 ? 21 : 35;
-        costPerDay = 12;
-        break;
-      case 6:
-      case 7:
-      case 8: // For Emission class ≥ 6
-        costPerYear = axles < 6 ? 750 : 1250;
-        costPerMonth = axles < 6 ? 75 : 125;
-        costPerWeek = axles < 6 ? 20 : 33;
-        costPerDay = 12;
-        break;
-      default:
-        costPerYear = 0;
-        costPerMonth = 0;
-        costPerWeek = 0;
-        costPerDay = 0;
-    }
+switch (emissionClass) {
+  case 0:
+    costPerYear = axles >= 4 ? 2359 : 1407;
+    costPerMonth = axles >= 4 ? 235 : 140;
+    costPerWeek = axles >= 4 ? 62 : 37;
+    costPerDay = 12;
+    break;
+  case 1:
+    costPerYear = axles >= 4 ? 2042 : 1223;
+    costPerMonth = axles >= 4 ? 204 : 122;
+    costPerWeek = axles >= 4 ? 54 : 32;
+    costPerDay = 12;
+    break;
+  case 2:
+    costPerYear = axles >= 4 ? 1776 : 1065;
+    costPerMonth = axles >= 4 ? 177 : 106;
+    costPerWeek = axles >= 4 ? 47 : 28;
+    costPerDay = 12;
+    break;
+  case 3:
+    costPerYear = axles >= 4 ? 1543 : 926;
+    costPerMonth = axles >= 4 ? 154 : 92;
+    costPerWeek = axles >= 4 ? 41 : 24;
+    costPerDay = 12;
+    break;
+  case 4:
+    costPerYear = axles >= 4 ? 1404 : 842;
+    costPerMonth = axles >= 4 ? 140 : 84;
+    costPerWeek = axles >= 4 ? 37 : 22;
+    costPerDay = 12;
+    break;
+  case 5:
+    costPerYear = axles >= 4 ? 1327 : 796;
+    costPerMonth = axles >= 4 ? 132 : 79;
+    costPerWeek = axles >= 4 ? 35 : 21;
+    costPerDay = 12;
+    break;
+  case 6:
+  case 7:
+  case 8: // For Emission class ≥ 6
+    costPerYear = axles >= 4 ? 1250 : 750;
+    costPerMonth = axles >= 4 ? 125 : 75;
+    costPerWeek = axles >= 4 ? 33 : 20;
+    costPerDay = 12;
+    break;
+  default:
+    costPerYear = 0;
+    costPerMonth = 0;
+    costPerWeek = 0;
+    costPerDay = 0;
+}
     return [costPerYear, costPerMonth, costPerWeek, costPerDay];
   }
 
